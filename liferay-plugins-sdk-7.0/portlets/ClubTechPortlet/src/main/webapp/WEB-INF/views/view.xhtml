@@ -10,14 +10,11 @@
 		<h:outputStylesheet library="css" name="main.css" />
 	</h:head>
 	<h:body>
-		<p:panel id="panelId">
-			<h:outputText styleClass="bold-hello-world" value="#{i18n['ClubTechPortlet-hello-world']}" />
-		</p:panel>
-		<ul>
-			<li><em><h:outputText value="#{product.JSF}" /></em></li>
-			<li><em><h:outputText value="#{product.LIFERAY_FACES_BRIDGE}" /></em></li>
-			<li><em><h:outputText value="#{product.LIFERAY_FACES_UTIL}" /></em></li>
-			<li><em><h:outputText value="#{product.PRIMEFACES}" /></em></li>
-		</ul>
+		<h:form>
+			<h:outputLabel value="#{user.fullName}" />
+    		<p:dataList value="#{playerLIstView.users}" var="user">
+       			 #{"user"}
+    		</p:dataList>
+    	</h:form>
 	</h:body>
 </f:view>
