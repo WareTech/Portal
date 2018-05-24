@@ -11,9 +11,9 @@
 	</h:head>
 	<h:body>
 		<h:form>
-			<h:outputLabel value="#{user.fullName}" />
-    		<p:dataList value="#{playerLIstView.users}" var="user">
-       			 #{"user"}
+			<h:outputLabel value="#{playerListView.user.getFullName()}" />
+    		<p:dataList value="#{playerListView.users}" var="user">
+       			 #{user.getFullName()}
     		</p:dataList>
     	</h:form>
 	</h:body>
