@@ -5,4 +5,7 @@
 	<category name="ClubTech">
 		<portlet id="ClubTechPortlet" />
 	</category>
+	<category name="category.sample">
+		<portlet id="dr-tech"></portlet>
+	</category>
 </display>

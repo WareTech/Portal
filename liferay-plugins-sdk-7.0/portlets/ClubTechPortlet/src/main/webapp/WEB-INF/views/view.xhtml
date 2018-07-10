@@ -11,9 +11,38 @@
 	</h:head>
 	<h:body>
 		<h:form>
-			<h:outputLabel value="#{playerListView.user.getFullName()}" />
-    		<p:dataList value="#{playerListView.users}" var="user">
+			<h:outputLabel value="#{parametersView.user.getFullName()}" />
+			<p:outputPanel deferred="true">
+			<div class="ui-g">
+			    <div class="ui-g-12">
+					<p:inputText value="#{playerListView.player.firstname}" />
+			    </div>
+			    <div class="ui-g-12">
+					<p:inputText value="#{playerListView.player.lastname}" />
+			    </div>
+			    <div class="ui-g-12">
+					<p:inputText value="#{playerListView.player.dni}" />
+			    </div>
+			    <div class="ui-g-12">
+					<p:calendar value="#{playerListView.birthdate}"/>
+			    </div>
+			    <div class="ui-g-12">
+					<p:selectOneMenu value="#{playerListView.player.category}" style="width:125px">
+						<f:selectItems value="#{parametersView.categories}" />
+					</p:selectOneMenu>
+			    </div>
+			    <div class="ui-g-12">
+					<p:commandButton value="Crear" update="playerList" actionListener="#{playerListView.create}" styleClass="ui-priority-primary" />
+			    </div>
+			</div>
+    		</p:outputPanel>
+    		
+    		<p:dataList id="userList" value="#{playerListView.userList}" var="user">
        			 #{user.getFullName()}
+    		</p:dataList>
+    
+    		<p:dataList id="playerList" value="#{playerListView.playerList}" var="player">
+       			 #{player.getFirstname()}, #{player.getLastname()}, #{player.getDni()}, #{player.getBirthdate()}, #{player.getCategory()}, #{player.getYear()}, #{player.getStatus()}
     		</p:dataList>
     	</h:form>
 	</h:body>
